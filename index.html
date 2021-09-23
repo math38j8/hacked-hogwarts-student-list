@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hogwarts Studentlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <img src="images/dementor.svg" alt="dementor" class="hack" id="dementor">
+    <!-- <img class="hogwarts" src="images/hogwarts.png" alt="hogwarts crest"> -->
+    <h1 class="glow">Hogwarts</h1>
+    <h2>The infamous Student List of 1991.</h2>
+    <!-- <button class="hacking">DO NOT PRESS!! </button> -->
+    <div id="navigator">
+        <div class="filtering">
+            <p>Filter by:</p>
+            <button class="filter" data-action="filter" data-filter="all">All</button>
+            <button class="filter" data-action="filter" data-filter="gryffindor">Gryffindor</button>
+            <button class="filter" data-action="filter" data-filter="hufflepuff">Hufflepuff</button>
+            <button class="filter" data-action="filter" data-filter="ravenclaw">Ravenclaw</button>
+            <button class="filter" data-action="filter" data-filter="slytherin">Slytherin</button>
+            <button class="filter" data-action="filter" data-filter="squad">Inquisitorial Squad</button>
+            <button class="filter" data-action="filter" data-filter="prefect">Prefects</button>
+            <button class="filter" data-action="filter" data-filter="expelled">Expelled students</button>
+        </div>
+        <div class="sorting">
+            <p>Sort by:</p>
+            <button class="filter" data-action="sort" data-sort="firstName">Firstname</button>
+            <button class="filter" data-action="sort" data-sort="lastName">Lastname</button>
+            <button class="filter" data-action="sort" data-sort="house">House</button>
+        </div>
+        <div class="searching">
+            <input type="search" id="searchfunction" placeholder="Search...">
+            <button id="search_btn" class="filter">Search</button>
+        </div>
+    </div>
+</header>
+
+    <section id="students"></section>
+
+    <div id="popup"></div>
+
+    <template id="student">
+        <article class="studentinfo">
+            <div id="studenttext">
+                <h2 data-field="firstname" class="name"></h2>
+                <h2 data-field="lastname" class="name"></h2>
+                <img data-field="image" class="image" src="" alt="">
+                <h3 data-field="house"></h3>
+            </div>
+            <div class ="buttons">
+                <button class="prefect gray"></button>
+                <button class="squad gray"></button>
+                <button class="expell gray"></button>
+            </div>
+        </article>
+    </template>
+
+    <template id="info">
+        <div class="housecrest"></div>
+        <button id="close">&times;</button>
+        <img data-field="image" class="image" src="" alt="">
+        <p class="infotext" data-field="firstname"></p>
+        <p class="infotext" data-field="middelname"></p>
+        <p class="infotext" data-field="nickname"></p>
+        <p class="infotext" data-field="lastname"></p>
+        <p class="infotext" data-field="bloodstatus"></p>
+        <p class="infotext" data-field="house"></p>
+    </template>
+
+    <div id="remove_AorB" class="modal hide">
+        <div class="dialog">
+          <button class="close_dialog">X</button>
+          <h2>There can only be two prefects from each house! <br>Remove on of the following:
+          </h2>
+          <div class="sidebyside">
+            <button id="removeA">Remove <span data-field="prefectA"> A</span></button>
+            <button id="removeB">Remove <span data-field="prefectB"> B</span></button>
+          </div>
+        </div>
+      </div>
+
+    <div id="overlay"></div>
+    <script src="script.js"></script>
+</body>
+</html>

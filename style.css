@@ -1,0 +1,501 @@
+/* Generel */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("dementor.png");
+  background-color: transparent;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* background-color: black; */
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "harrypotter";
+  src: url("fonts/HarryPotter.ttf");
+}
+
+@font-face {
+  font-family: "harryP2";
+  src: url("fonts/HarryP-MVZ6w.ttf");
+}
+
+@font-face {
+  font-family: "magicSchoolOne";
+  src: url("fonts/MagicSchoolOne-ovYz.ttf");
+}
+
+@font-face {
+  font-family: "magicSchoolTwo";
+  src: url("fonts/MagicSchoolTwo-4n5D.ttf");
+}
+
+@font-face {
+  font-family: "Håndskrift";
+  src: url("fonts/HelloKetta-d99oX.ttf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("fonts/Lato-Regular.ttf");
+}
+
+h1 {
+  color: rgb(207, 156, 44);
+  font-size: 6em;
+  text-align: center;
+  margin: 20px;
+  font-family: "harryP2";
+  letter-spacing: 8px;
+}
+
+
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0px 0px 10px #fff, 0 0 40px #e68a00, 0 0 70px #e68a00;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 50px #ffd04d, 0 0 80px #ffd04d;
+  }
+}
+
+
+
+
+h2 {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  font-family: "harryP2";
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.6em;
+  color: white;
+  font-family: "magicSchoolOne";
+  letter-spacing: 4px;
+}
+
+p {
+  font-size: 2em;
+  color: rgb(207, 156, 44);
+  font-family: "Tangerine";
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.hogwarts {
+  display: block;
+  width: 250px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filtering/sorting */
+/* navigations baren med knapper  */
+#navigator {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  margin: 30px;
+  border-radius: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  /* background: rgb(6, 9, 53); */
+  /* background: linear-gradient(
+    0deg,s
+    rgba(40, 33, 59, 1) 0%,
+    rgba(16, 12, 29, 1) 67%,
+    rgba(8, 8, 8, 1) 100% */
+  );
+}
+
+#navigator p {
+  margin: auto 0;
+  margin-right: 20px;
+}
+
+.filtering {
+  display: flex;
+}
+
+.sorting {
+  display: flex;
+}
+.searching {
+  margin: auto 0;
+}
+
+#searchfunction {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+}
+
+button.filter {
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+button.filter:hover {
+  /* background: linear-gradient(
+    0deg,
+    rgba(106, 128, 145, 1) 0%,
+    rgba(82, 100, 129, 1) 67%
+  ); */
+  color: rgb(207, 156, 44);;
+  background: rgb(33, 34, 51);
+}
+
+/* button.filter:focus {
+  background: linear-gradient(
+    0deg,
+    rgba(106, 128, 145, 1) 0%,
+    rgba(82, 100, 129, 1) 67%
+  );
+  color: black;
+} */
+
+/* Students overview */
+#students {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  text-align: center;
+  margin: 20px;
+  /* background: #8b0000; */
+}
+
+.studentinfo {
+  width: 300px;
+    height: 390px;
+  margin: 0 auto;
+  border: 1px solid rgb(207, 156, 44);
+  border-radius: 10px;
+  cursor: pointer;
+  background: radial-gradient(
+    circle,
+    rgba(255, 254, 208, 0.918),
+    rgba(7, 3, 49, 0),
+    rgb(0, 0, 0)
+  );
+}
+
+.name:first-child {
+  margin-top: 20px;
+}
+
+.name:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.image {
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.prefect {
+  background-image: url("./images/star.png");
+  width: 50px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prefect:hover {
+  filter: none;
+}
+
+.squad {
+  background-image: url("./images/squad46png.png");
+
+  width: 60px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.squad:hover {
+  filter: none;
+}
+
+.expell {
+  background-image: url("./images/expell2.png");
+  width: 40px;
+  height: 38px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.expell:hover {
+  filter: none;
+}
+
+.gray {
+  filter: grayscale();
+}
+
+/* Modal / dialog box - prefect */
+
+.hide {
+  visibility: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(19, 19, 19, 0.502);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  box-shadow: 1px 1px 10px rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 2em;
+  background: rgb(21, 21, 21);
+  position: relative;
+  color: rgb(0, 0, 0);
+}
+
+.sidebyside {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sidebyside button {
+  margin-top: 20px;
+  border: 1px solid white;
+  width: 230px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(
+    0deg,
+    rgba(40, 33, 59, 1) 0%,
+    rgba(16, 12, 29, 1) 67%,
+    rgba(8, 8, 8, 1) 100%
+  );
+}
+
+.sidebyside button:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(106, 128, 145, 1) 0%,
+    rgba(82, 100, 129, 1) 67%
+  );
+  color: black;
+}
+
+.close_dialog {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  font-size: 1.2em;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Pop-up - details */
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 4px solid rgb(0, 0, 0);
+  box-shadow: inset 0px -1px 80px 20px rgba(0, 0, 0, 0.705);
+  border-radius: 10px;
+  z-index: 10;
+  /* background: linear-gradient(135deg, #786d57 0%, #decba2 62%, #e8e0c5 100%); */
+  /* width: 500px;
+  max-width: 80%; */
+  width: 592px;
+  padding: 15px;
+}
+
+#popup p{
+  color: white
+
+}
+
+#popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#close {
+  cursor: pointer;
+  font-weight: bold;
+  float: right;
+  margin: 10px;
+  font-size: 2em;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+#popup .image {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+  .housecrest {
+/* --------GAMMEL---------- */
+    /* width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block; */
+
+  /*------------- NY -------------*/
+  width: 29%;
+  height: 61%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  z-index: 1000;
+  position: absolute;
+  top: 189px;
+  left: 338px;
+}
+
+
+  /* GAMMELT  */
+  /* width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block; */
+}
+
+.infotext {
+  padding: 7px 40px;
+  color: white;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hacking{
+  background-color: #3e3f3e; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+/* HACK */
+#dementor {
+  position: absolute;
+  width: 115px;
+}
+
+.hack {
+  animation-name: hack_kf;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: inherit;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+}
+
+@keyframes hack_kf {
+  0% {
+    transform: translate(2vw, 1vw);
+  }
+  100% {
+    transform: translate(2vw, 3vw);
+  }
+}
+
+.flyaway {
+  animation-name: flyaway_kf;
+  animation-iteration-count: 1;
+}
+
+@keyframes flyaway_kf {
+  0% {
+    transform: translate(2vw, 2vw);
+  }
+  100% {
+    transform: translate(120vw, 10vw);
+  }
+}
